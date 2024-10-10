@@ -9,23 +9,23 @@ Pour une bonne organization, vous pouvez créer un dossier bill-app dans lequel 
 
 Clonez le projet backend dans le dossier bill-app :
 ```
-$ git clone https://github.com/OpenClassrooms-Student-Center/Billed-app-FR-Back.git
+$ git clone https://github.com/PierreTDX/P9_Billed_BACK_OC.git
 ```
 
 ```
 bill-app/
-   - Billed-app-FR-Back
+   - P9_Billed_BACK_OC
 ```
 
 Clonez le projet frontend dans le dossier bill-app :
 ```
-$ git clone https://github.com/OpenClassrooms-Student-Center/Billed-app-FR-Front.git
+$ git clone https://github.com/PierreTDX/P9_Billed_FRONT_OC.git
 ```
 
 ```
 bill-app/
-   - Billed-app-FR-Back
-   - Billed-app-FR-Front
+   - P9_Billed_BACK_OC
+   - P9_Billed_FRONT_OC
 ```
 
 ## Comment lancer l'application en local ?

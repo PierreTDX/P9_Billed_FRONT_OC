@@ -52,6 +52,11 @@ export default class {
               }
             }
           })
+
+          // Tri des factures par date décroissante à faire dans BillsUi.js pour que le test soit OK
+          // Mais pour moi il vaut mieux faire le tri ici !
+          //.sort((a, b) => new Date(b.date) - new Date(a.date))
+
           console.log('length', bills.length)
         return bills
       })

@@ -34,6 +34,7 @@ export default class {
       .list()
       .then(snapshot => {
         const bills = snapshot
+          .sort((a, b) => new Date(b.date) - new Date(a.date)) // pour moi il vaut mieux faire le tri ici ! plutot que BillsUI, mais le test se fait dans BillsUI
           .map(doc => {
             try {
               return {
@@ -52,11 +53,6 @@ export default class {
               }
             }
           })
-
-          // Tri des factures par date décroissante à faire dans BillsUi.js pour que le test soit OK
-          // Mais pour moi il vaut mieux faire le tri ici !
-          //.sort((a, b) => new Date(b.date) - new Date(a.date))
-
           console.log('length', bills.length)
         return bills
       })

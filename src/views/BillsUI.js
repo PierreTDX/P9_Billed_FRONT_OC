@@ -19,18 +19,16 @@ const row = (bill) => {
     `)
   }
 
-  // Ajout de la fonction de tri en par date décroissante avec .sort
   const rows = (data) => {
     return (data && data.length) 
       ? data
-        .sort((a, b) => new Date(b.date) - new Date(a.date)) // Tri par date décroissante
         .map(bill => row(bill))
         .join("") 
       : ""
   }
 
 export default ({ data: bills, loading, error }) => {
-  
+
   const modal = () => (`
     <div class="modal fade" id="modaleFile" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg" role="document">

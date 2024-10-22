@@ -34,7 +34,7 @@ export default class {
       .list()
       .then(snapshot => {
         const bills = snapshot
-          .sort((a, b) => new Date(b.date) - new Date(a.date)) // tri date décroissant
+          .sort((a, b) => new Date(b.date) - new Date(a.date)) // tri date décroissant // BugFixé
           .map(doc => {
             try {
               return {

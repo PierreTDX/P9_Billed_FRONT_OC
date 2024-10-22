@@ -54,8 +54,13 @@ export default () => {
                     <textarea class="form-control blue-border" data-testid="commentary" rows="3"></textarea>
                   </div>
                   <div class="col-half">
-                    <label for="file" class="bold-label">Justificatif</label>
+                    <label for="file" class="bold-label">Justificatif (au format jpg, jpeg ou png)</label>
+                    <!--ancien input pour correction bug
                     <input required type="file" class="form-control blue-border" data-testid="file" />
+                    -->
+                    <!--BugFixé avec input modifié + ajout message d'erreur-->
+                    <input required type="file" class="form-control blue-border" data-testid="file" accept="image/jpg, image/jpeg, image/png"/>
+                    <div class="msgErrorFiletype hidden" data-testid="message_file_type_error">Fchier non supporté - Choisir un fichier du type <i>mon_fichier</i><b>.jpg</b>, <i>mon_fichier</i><b>.jpeg</b>, <i>mon_fichier</i><b>.png</b>.</div>
                   </div>
                 </div>
             </div>

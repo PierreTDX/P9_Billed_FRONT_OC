@@ -61,3 +61,15 @@ textarea:focus, input:focus, select:focus {
 *[placeholder] {
   color: #0E5AE5 !important;
 }
+
+/* BugFixé Css pour correction bug (ajout condition type de fichier)*/
+.hidden{
+  display: none;
+}
+
+.msgErrorFiletype {
+  text-align: left;
+  font-size: small;
+  color: red;
+}
+/* fin Css Bug*/

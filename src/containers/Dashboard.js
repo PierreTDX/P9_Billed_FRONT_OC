@@ -145,7 +145,7 @@ export default class {
       this.counter ++
     }
 
-    // BugFixé déplier plusieurs listes et pouvoir sélectionner les tickets
+    // BugFixé déplier plusieurs listes et pouvoir sélectionner les tickets .click déprécié remplacé par on.("click", 
     bills.forEach(bill => {
       $(`#open-bill${bill.id}`).off("click").on("click",((e) => this.handleEditTicket(e, bill, bills)));
     })

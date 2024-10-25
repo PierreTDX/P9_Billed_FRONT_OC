@@ -50,30 +50,32 @@ describe("Given I am connected as an employee", () => {
       // Configurer le stockage local et naviguer vers la page des Factures
       Object.defineProperty(window, 'localStorage', { value: localStorageMock });
       window.localStorage.setItem('user', JSON.stringify({ type: 'Employee' }));
+  
+      // Préparer le DOM et initialiser le routeur
       const root = document.createElement("div");
       root.setAttribute("id", "root");
       document.body.append(root);
       router();
       window.onNavigate(ROUTES_PATH.Bills);
-
+  
       // Mock de onNavigate et instanciation de Bills
-      const onNavigate = jest.fn();
-      const billInstance = new Bills({
+      const onNavigate = jest.fn((path) => window.onNavigate(path));
+      new Bills({
         document,
         onNavigate,
         store: null,
         localStorage: window.localStorage
       });
-
-      // Simuler un clic sur le bouton Nouvelle Facture
-      const newBillButton = screen.getByTestId('btn-new-bill');
+  
+      // Vérifier que le bouton est dans le DOM et simuler le clic
+      const newBillButton = await screen.findByTestId('btn-new-bill');
       userEvent.click(newBillButton);
-
+  
       // S'attendre à ce que onNavigate ait été appelé avec le chemin de la Nouvelle Facture
       await waitFor(() => expect(onNavigate).toHaveBeenCalledWith(ROUTES_PATH.NewBill));
     });
   });
-
+  
 
   describe("When I am on Bills Page and somthing wrong", () => {
     let bill;
